@@ -1,0 +1,18 @@
+<div class="text-center">
+    <h2>投稿一覧</h2>
+
+    <% @tweets.each do|t| %>
+        <div class="tweet-box">
+            <div class="tweet-padding">
+                <p class="text-left"><%= t.content %></p>
+                <ul class="list-inline list-unstyled text-right">
+                    <p><%= t.created_at %></p>
+                    <li><%= link_to "編集", edit_tweet_path(t.id)%></li>
+                    <li><%= link_to "削除", tweet_path(t.id), method: :DELETE %></li>
+                </ul>
+            </div>    
+                
+        </div>
+    <% end%>
+
+</div>
